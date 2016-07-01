@@ -1,8 +1,5 @@
 
 // NODO 1 del Cuarto de las hijas, switch que prende y apaga cada cama, recibe estado inicial y prende leds 
-// Sensor de movimiento para activar leds
-
-
 // MySensosrs
 #include <MySensor.h>
 #include <SPI.h>
@@ -18,7 +15,6 @@ MyMessage msgOUT(CH_ID_BT1,V_STATUS);
 // Asignacion de Pin
 int btn1Pin = 2;          // Button 1 (Interrupt 0)
 int btn2Pin = 3;          // Button 2 (Interrupt 1)
-int sen1Pin = 4;          // PIR 1
 int led1Pin = 5;          // Led 1
 int led2Pin = 6;          // Led 2
 
@@ -28,7 +24,6 @@ boolean lgt1PrevState = 0;    // Status de Luz 1 Anterior (Asume apagado en rebo
 boolean lgt2State = 0;        // Status de Luz 2 actual (0 = Encendido por el pullup)
 boolean lgt2PrevState = 0;    // Status de Luz 2 Anterior (Asume apagado en reboot por default)
 boolean hwAck;                // Aknnowledge de Mysensors
-
 
 void btn1Interrupt() // Rutina de Interrupcion 0, PIN2
   {
